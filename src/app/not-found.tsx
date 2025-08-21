@@ -1,33 +1,39 @@
 "use client";
 
-import ASCIIText from "@/components/ui/ascii-text";
-import MatrixBackground from "@/components/ui/matrix-background";
 import Link from "next/link";
+import MatrixBackground from "@/components/ui/matrix-background";
 
-export default function Home() {
+export default function NotFound() {
   return (
-    <div className="min-h-screen bg-black relative">
+    <div className="min-h-screen bg-black relative flex items-center justify-center">
       <MatrixBackground />
-      <ASCIIText 
-        text="Cryptoed"
-        asciiFontSize={3}
-        textFontSize={150}
-        textColor="#ffffff"
-        planeBaseHeight={6}
-        enableWaves={true}
-      />
       
-      <div className="absolute bottom-48 left-1/2 transform -translate-x-1/2 z-10">
-        <Link href="/app">
-          <button className="ascii-button group relative">
-            <pre className="ascii-button-text">
-{`GET STARTED`}
-            </pre>
-          </button>
-        </Link>
+      <div className="text-center z-10 relative">
+        <div className="mb-8">
+          <h1 className="text-green-400 font-mono text-8xl md:text-9xl lg:text-[12rem] font-bold">
+            404
+          </h1>
+        </div>
+        
+        <div className="mb-8">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+            PAGE NOT FOUND
+          </h2>
+          <p className="text-gray-400 text-base md:text-lg lg:text-xl">
+            The page you&apos;re looking for doesn&apos;t exist in the matrix.
+          </p>
+        </div>
+        
+        <div>
+          <Link href="/">
+            <button className="ascii-button">
+              <span className="ascii-button-text">RETURN HOME</span>
+            </button>
+          </Link>
+        </div>
       </div>
 
-      <style jsx>{`
+      <style jsx global>{`
         .ascii-button {
           position: relative;
           background: #000;
@@ -80,6 +86,7 @@ export default function Home() {
           outline: none;
           white-space: pre;
           text-align: center;
+          display: block;
         }
 
         .ascii-button::before {
@@ -89,10 +96,10 @@ export default function Home() {
           left: -2px;
           right: -2px;
           bottom: -2px;
-          background: linear-gradient(45deg, #00ff00, #00aa00, #00ff00);
           z-index: -1;
           opacity: 0.3;
           transition: opacity 0.3s ease;
+          background: linear-gradient(45deg, #00ff00, #00aa00, #00ff00);
         }
 
         .ascii-button:hover::before {
