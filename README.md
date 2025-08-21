@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cryptoed
+
+A stunning ASCII art crypto dashboard with real-time data visualization, built with Next.js, Three.js, and TypeScript.
+
+## Features
+
+- **ASCII Art Visualization**: Beautiful ASCII text rendering with Three.js shaders
+- **Real-time Crypto Data**: Live cryptocurrency price data and charts
+- **Matrix Background**: Animated matrix-style background effects
+- **RSS News Feed**: Real-time crypto news from multiple sources
+- **Responsive Design**: Fully responsive across all devices
+- **Interactive Elements**: Mouse-responsive animations and effects
+
+## Tech Stack
+
+- **Frontend**: Next.js 15, React 18, TypeScript
+- **Styling**: Tailwind CSS
+- **3D Graphics**: Three.js
+- **Charts**: Recharts
+- **Data**: Yahoo Finance API, RSS feeds
+- **Deployment**: Vercel-ready
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/jackhemignton/cryptoed.git
+cd cryptoed
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+### Building for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/                 # Next.js app directory
+│   ├── app/            # Main app page
+│   ├── layout.tsx      # Root layout
+│   └── page.tsx        # Home page
+├── components/         # React components
+│   └── ui/            # UI components
+│       ├── ascii-text.tsx      # ASCII art text renderer
+│       ├── crypto-chart-fixed.tsx  # Crypto price charts
+│       ├── matrix-background.tsx   # Matrix animation
+│       └── rss-news.tsx        # RSS news feed
+└── lib/               # Utility functions
+    └── utils.ts       # Helper functions
+```
 
-## Deploy on Vercel
+## Key Components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### ASCII Text Component
+Renders text as ASCII art using Three.js shaders with wave animations and mouse interaction.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Crypto Chart Component
+Displays real-time cryptocurrency price data with interactive charts and price statistics.
+
+### Matrix Background
+Animated matrix-style background with falling characters and glow effects.
+
+### RSS News Feed
+Aggregates crypto news from multiple RSS sources with real-time updates.
+
+## API Integration
+
+- **Yahoo Finance API**: Real-time cryptocurrency price data
+- **RSS Feeds**: News from CoinDesk, Cointelegraph, Decrypt, and more
+- **CORS Proxy**: Handles cross-origin requests for external APIs
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License.
+
+## Live Demo
+
+Visit the live application at: [https://cryptoed.vercel.app](https://cryptoed.vercel.app)
+
+## Acknowledgments
+
+- Three.js for 3D graphics
+- Recharts for data visualization
+- Tailwind CSS for styling
+- Next.js for the framework
